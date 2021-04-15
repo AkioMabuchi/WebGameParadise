@@ -1,24 +1,11 @@
-# README
+# Web Game Paradise
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+UnityやUnreal Engineなどで作成されたWebゲームを投稿、閲覧できるサービスです。
 
-Things you may want to cover:
+## 基本仕様
 
-* Ruby version
+Ruby on Rails Ver 6.0.3.6
 
-* System dependencies
+Ruby 2.6.1
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MySQL 5.6.47

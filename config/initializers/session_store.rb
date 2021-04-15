@@ -1,0 +1,1 @@
+Rails.application.config.session_store :cookie_store, key: "_web_game_paradise_session", domain: :all

@@ -30,4 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  html: "en"
   hello: "Hello world"
+  new_game: "Upload Game"
+  terms: "Terms of service"
+  privacy: "Privacy policy"
+  contact: "Contact"

@@ -1,15 +1,85 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Wgp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="<%= t("html") %>">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+  <%= display_meta_tags(default_meta_tags) %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+</head>
+<body>
+<header>
+  <nav class="left-mobile">
+    <%= link_to "", root_path, class: "header-logo" %>
+  </nav>
+  <nav class="left-desktop">
+    <%= link_to "", root_path, class: "header-logo" %>
+  </nav>
+  <nav class="right-mobile">
 
-  <body>
-    <%= yield %>
-  </body>
+  </nav>
+  <nav class="right-desktop">
+    <% if user_signed_in? %>
+      <div class="user-image" id="jquery-header-user-button">
+        <%= image_tag "/NoUserImage.png" %>
+      </div>
+      <ul class="users">
+        <li>
+          <%= link_to new_game_path do %>
+            <i class="fas fa-plus"></i> <%= t("new_game") %>
+          <% end %>
+        </li>
+      </ul>
+    <% else %>
+      <ul class="guest">
+        <li>
+          <%= link_to new_user_registration_path do %>
+            <i class="fas fa-user-plus"></i> <%= t("devise.registrations.new.sign_up") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <i class="fas fa-sign-in-alt"></i> <%= t("devise.sessions.new.sign_in") %>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+  </nav>
+  <% if user_signed_in? %>
+    <nav class="pop-up-menu" id="jquery-header-pop-up-menu">
+      <ul>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <span class="icon"><i class="fas fa-sign-out-alt"></i></span> <%= t("devise.sessions.destroy.sign_out") %>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  <% end %>
+</header>
+<main role="main">
+  <%= yield %>
+</main>
+<footer>
+  <nav>
+    <ul>
+      <li>
+        <%= link_to t("terms"), "/" %>
+      </li>
+      <li>
+        <%= link_to t("privacy"), "/" %>
+      </li>
+      <li>
+        <%= link_to t("contact"), "/" %>
+      </li>
+    </ul>
+  </nav>
+  <address>
+    Copyright <i class="far fa-copyright"></i> 2021 Web Game Paradise All Rights Reserved.
+  </address>
+  <%= react_component "Locale", info: @locale_react_info %>
+</footer>
+</body>
 </html>

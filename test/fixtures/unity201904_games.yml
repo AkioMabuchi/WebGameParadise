@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  width: 1
+  height: 1
+  is_allowed_fullscreen: false
+  loader_file: MyString
+  data_file: MyString
+  code_file: MyString
+  framework_file: MyString
+
+two:
+  width: 1
+  height: 1
+  is_allowed_fullscreen: false
+  loader_file: MyString
+  data_file: MyString
+  code_file: MyString
+  framework_file: MyString
