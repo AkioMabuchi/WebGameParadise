@@ -1,0 +1,32 @@
+en:
+  games:
+    show:
+      fullscreen: "Fullscreen Mode"
+    upload:
+      header: "Upload Game"
+      game_id: "Game ID"
+      game_id_notice: " ( Required. Numbers or alphabets or hyphen, within 32 chars ) "
+      default_language: "Default Language"
+      game_engine: "Game Engine"
+      display_size: "Display Size"
+      width: "Width"
+      height: "Height"
+      allowed_fullscreen: "Allow Fullscreen"
+      no_content:
+        name: "No Content"
+        description: "Settings can be changed later."
+      unity_2019_4_x:
+        name: "Unity 2019.4.x"
+        loader_file: "UnityLoader.js File"
+        data_file: "xxx.data.unityweb File"
+        code_file: "xxx.wasm.code.unityweb File"
+        framework_file: "xxx.framework.unityweb File"
+        json_file: "xxx.json File"
+      unity_2020_3_x:
+        name: "Unity 2020.3.x"
+        description: "Please set \"Compression Format\" to \"Disabled\" from \"Publishing Settings\" of \"Settings for WebGL\" on \"Project Settings\"."
+        loader_file: "xxx.loader.js File"
+        data_file: "xxx.data File"
+        framework_file: "xxx.framework.js File"
+        wasm_file: "xxx.wasm File"
+      submit: "UPLOAD"

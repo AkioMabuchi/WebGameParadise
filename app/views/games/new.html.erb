@@ -1,2 +1,5 @@
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+<% set_meta_tags title: t("games.upload.header"), noindex: true %>
+<h1><%= t("games.upload.header") %></h1>
+<div class="new-game-page">
+  <%= react_component "NewGameForm", info: @react_info %>
+</div>

@@ -33,3 +33,5 @@ yarn-debug.log*
 
 # bundler files
 vendor/bundle
+
+/public/uploads

@@ -1,0 +1,32 @@
+ja:
+  games:
+    show:
+      fullscreen: "フルスクリーン表示"
+    upload:
+      header: "ゲームを投稿"
+      game_id: "ゲームID"
+      game_id_notice: "（必須、英数字およびハイフン、32字以内）"
+      default_language: "デフォルト言語"
+      game_engine: "ゲームエンジン"
+      display_size: "画面サイズ"
+      width: "横幅"
+      height: "縦幅"
+      allowed_fullscreen: "フルスクリーン表示を許可する"
+      no_content:
+        name: "未設定"
+        description: "設定は後ほど変更できます。"
+      unity_2019_4_x:
+        name: "Unity 2019.4.x"
+        loader_file: "UnityLoader.js ファイル"
+        data_file: "xxx.data.unityweb ファイル"
+        code_file: "xxx.wasm.code.unityweb ファイル"
+        framework_file: "xxx.wasm.framework.unityweb ファイル"
+        json_file: "xxx.json ファイル"
+      unity_2020_3_x:
+        name: "Unity 2020.3.x"
+        description: "Project Settingsにて、WebGL出力設定のPublishing Settings→Compression Format を「Disabled」にしてください。"
+        loader_file: "xxx.loader.js ファイル"
+        data_file: "xxx.data ファイル"
+        framework_file: "xxx.framework.js ファイル"
+        wasm_file: "xxx.wasm ファイル"
+      submit: "投稿"

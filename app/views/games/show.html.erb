@@ -1,2 +1,62 @@
 <h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<div class="show-game-page">
+  <% if @game.unity_2020_3_x? %>
+    <div class="unity-content" style="width: <%= @game.unity202003_game.width %>px; height: <%= @game.unity202003_game.height %>px">
+      <canvas id="unity-canvas" style="width: <%= @game.unity202003_game.width %>px; height: <%= @game.unity202003_game.height %>px; background: #231F20"></canvas>
+    </div>
+    <% if @game.unity202003_game.is_allowed_fullscreen %>
+      <div class="unity-fullscreen">
+        <div id="unity-fullscreen-button" class="unity-fullscreen-button">
+          <%= t("games.show.fullscreen") %>
+        </div>
+      </div>
+    <% end %>
+    <script src="<%= @game.unity202003_game.loader_file.url %>"></script>
+    <script>
+        <% if @game.unity202003_game.is_allowed_fullscreen %>
+        let fullscreenButton = document.querySelector("#unity-fullscreen-button");
+        <% end %>
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+            dataUrl: "<%= @game.unity202003_game.data_file.url %>",
+            frameworkUrl: "<%= @game.unity202003_game.framework_file.url %>",
+            codeUrl: "<%= @game.unity202003_game.wasm_file.url %>",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "WebGameParadise",
+            productName: "WebGameParadiseGame",
+            productVersion: "1.0.0",
+        }).then((unityInstance) => {
+            <% if @game.unity202003_game.is_allowed_fullscreen %>
+            fullscreenButton.onclick = () => {
+                unityInstance.SetFullscreen(1);
+            }
+            <% end %>
+        }).catch((message) => {
+            alert(message);
+        });
+    </script>
+  <% end %>
+  <% if @game.unity_2019_4_x? %>
+    <div class="unity-content" style="width: <%= @game.unity201904_game.width %>px; height: <%= @game.unity201904_game.height %>px">
+      <div id="unityContainer" style="width: <%= @game.unity201904_game.width %>px; height: <%= @game.unity201904_game.height %>px"></div>
+    </div>
+    <% if @game.unity201904_game.is_allowed_fullscreen %>
+      <div class="unity-fullscreen">
+        <div id="unity-fullscreen-button" class="unity-fullscreen-button">
+          <%= t("games.show.fullscreen") %>
+        </div>
+      </div>
+    <% end %>
+    <script src="<%= @game.unity201904_game.loader_file.url %>"></script>
+    <script>
+        <% if @game.unity202003_game.is_allowed_fullscreen %>
+        let fullscreenButton = document.querySelector("#unity-fullscreen-button");
+        <% end %>
+        let unityInstance = UnityLoader.instantiate("unityContainer", "<%= @game.unity201904_game.json_file %>");
+        <% if @game.unity202003_game.is_allowed_fullscreen %>
+        fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+        };
+        <% end %>
+    </script>
+  <% end %>
+</div>
