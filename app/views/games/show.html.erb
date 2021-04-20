@@ -48,11 +48,11 @@
     <% end %>
     <script src="<%= @game.unity201904_game.loader_file.url %>"></script>
     <script>
-        <% if @game.unity202003_game.is_allowed_fullscreen %>
+        <% if @game.unity201904_game.is_allowed_fullscreen %>
         let fullscreenButton = document.querySelector("#unity-fullscreen-button");
         <% end %>
         let unityInstance = UnityLoader.instantiate("unityContainer", "<%= @game.unity201904_game.json_file %>");
-        <% if @game.unity202003_game.is_allowed_fullscreen %>
+        <% if @game.unity201904_game.is_allowed_fullscreen %>
         fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
         };
