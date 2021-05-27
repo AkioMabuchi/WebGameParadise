@@ -1,3 +1,74 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+div.show-game-page {
+  div.unity-content {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  div.unity-fullscreen {
+    padding-top: 30px;
+    text-align: center;
+
+    div.unity-fullscreen-button {
+      display: inline-block;
+      color: #4A90E2;
+    }
+  }
+}
+
+div.new-game-page {
+  padding-bottom: 100px;
+
+  form.new-game-form {
+    @media(max-width: 500px) {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    @media(min-width: 500px) {
+      width: 480px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    padding: 20px 15px 30px;
+    border: 1px solid #BFBFBF;
+    border-radius: 5px;
+
+    div.field {
+      h4 {
+        font-size: 18px;
+        line-height: 20px;
+      }
+
+      padding-bottom: 20px;
+
+      div.field-container {
+        display: flex;
+        justify-content: left;
+        align-items: flex-end;
+
+        div.field-content {
+          width: 80px;
+        }
+
+        div.field-multiply {
+          padding-right: 10px;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      margin-top: 5px;
+      width: 100%;
+      height: 30px;
+    }
+
+    input[type="file"] {
+      margin-top: 5px;
+    }
+  }
+}
