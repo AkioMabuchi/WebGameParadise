@@ -47,5 +47,7 @@ _デフォルト設定では `DB_USER` に root、`DB_HOST` には 127.0.0.1、`
 Rails アプリケーション及び接続のための MySQL の動作環境を用意します。
 
 ```bash
-docker-compose build && docker-compose up -d
+# 下記コマンドで Docker イメージの作成が成功したら、Docker Compose で各種コンテナを起動する
+# 正常に起動できたか確認するために http://localhost:3000 にブラウザからアクセスしてページが表示されることを確認する
+docker-compose build && docker-compose up
 ```
